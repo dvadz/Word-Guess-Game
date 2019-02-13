@@ -26,3 +26,11 @@ for (var i = 0; i < secretWord.length; i++) {
 }
 $("#h1_the_secret_word").text(secretWordDisplay);
 
+$("#div_alphabet").on("click", function (event) {
+    if (event.target.id === "div_alphabet") {
+        return;
+    }
+    console.log(event.target.id);
+    $("#" + event.target.id).addClass("selected");
+
+});
