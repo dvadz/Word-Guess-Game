@@ -6,6 +6,7 @@ var randonNumber,
     gameOver = false, 
     attemptsLeft = 10;
 
+
 var alphabet = ["A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 var listOfWords = [
@@ -39,7 +40,7 @@ $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 
 
 
-
+//LISTEN FOR CLICKS IN THE DIV THAT SHOWS THE ALPHABET
 $("#div_alphabet").on("click", function (event) {
 
     //ignore the event if the div_alphabet was clicked
@@ -51,13 +52,24 @@ $("#div_alphabet").on("click", function (event) {
     $("#" + event.target.id).addClass("disappear");
 
     //get the identity of the letter that was clicked
-    var letterThatWasClicked = event.target.innerText;
-
     //remove that letter from the alphabet array
+    var letterThatWasClicked = event.target.innerText;
     for (var i = 0; i < alphabet.length; i++) {
         if (alphabet[i] === letterThatWasClicked) {
             alphabet.splice(i, 1);
         }
     }
+
+
+    //Check if there is any match
+    var isMatched = false;
+    var tempStr;
+    for (var i = 0; i < secretWord.length; i++) {
+        if (secretWord[i] === letterThatWasClicked) {
+            isMatched = true;
+            secretWordDisplay[i] = letterThatWasClicked;
+        }
+    }
+    $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 
 });
