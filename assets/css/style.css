@@ -16,4 +16,13 @@
     height: 69px;
     margin: 15px;
     text-align: center;
+    color: #5A1807;
+}
+
+.letters:hover {
+    color: crimson;
+}
+
+.selected {
+    display: none;
 }
