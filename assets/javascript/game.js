@@ -43,6 +43,11 @@ $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 //LISTEN FOR CLICKS IN THE DIV THAT SHOWS THE ALPHABET
 $("#div_alphabet").on("click", function (event) {
 
+    //Check if gameOver
+    if(gameOver){
+        return;
+    }
+
     //ignore the event if the div_alphabet was clicked
     if (event.target.id === "div_alphabet") {
         return;
@@ -72,4 +77,15 @@ $("#div_alphabet").on("click", function (event) {
     }
     $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 
+    //Update the remaining attempts var
+    if (isMatched) {
+        //make a sound
+    } else {
+        attemptsLeft--;
+        console.log(`Attempts: ${attemptsLeft}`);
+        if (attemptsLeft == 0) {
+            gameOver = true;
+            console.log("GAMEOVER");
+        }
+    }
 });
