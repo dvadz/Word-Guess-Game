@@ -38,6 +38,12 @@ $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 // --------------------------------------------------------------------------------
 // ------------ INITIALIZATION OF THE GAME SHOULD END HERE ------------------------
 
+// KEYPRESS LISTENER
+$(document).on("keypress", function (event) {
+    var keypressed = String.fromCharCode(event.which);
+    keypressed = keypressed.toUpperCase();    
+    console.log(keypressed);
+});
 
 
 //LISTEN FOR CLICKS IN THE DIV THAT SHOWS THE ALPHABET
@@ -68,7 +74,6 @@ $("#div_alphabet").on("click", function (event) {
 
     //Check if there is any match
     var isMatched = false;
-    var tempStr;
     for (var i = 0; i < secretWord.length; i++) {
         if (secretWord[i] === letterThatWasClicked) {
             isMatched = true;
@@ -96,3 +101,4 @@ $("#div_alphabet").on("click", function (event) {
         }
     }
 });
+
