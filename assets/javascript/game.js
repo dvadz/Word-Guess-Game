@@ -34,6 +34,12 @@ $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 // KEYPRESS LISTENER
 $(document).on("keypress", function (event) {
 
+     //Check if gameOver
+     if(gameOver){
+        console.log("gameover");
+        return;
+    }
+
     //Find out the letter that was pressed
     var keypressed = String.fromCharCode(event.which);
     keypressed = keypressed.toUpperCase();    
