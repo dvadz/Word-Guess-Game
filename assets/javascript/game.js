@@ -45,6 +45,14 @@ $(document).on("keypress", function (event) {
     var keypressed = String.fromCharCode(event.which);
     keypressed = keypressed.toUpperCase();    
     console.log(keypressed);
+    
+     if(alphabet.indexOf("_") === -1) {
+        console.log("already pressed");
+        return;
+     }
+
+    game(keypressed);
+
 });
 
 
@@ -53,6 +61,7 @@ $("#div_alphabet").on("click", function (event) {
 
     //Check if gameOver
     if(gameOver){
+        console.log("ignored");
         return;
     }
 
