@@ -28,3 +28,11 @@
 .disappear {
     display: none;
 }
+
+.winner {
+    color: green;
+}
+
+.loser {
+    color: red;
+}

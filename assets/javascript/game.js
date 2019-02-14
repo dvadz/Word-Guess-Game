@@ -10,20 +10,13 @@ var randonNumber,
 var alphabet = ["A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 var listOfWords = [
-    'perspective',
-    'exellecent',
-    'prerogative',
-    'microwave',
-    'transplant',
-    'witchcraft',
-    'syndrome',
-    'twelfth',
-    'oxygen',
-    'quartz'
+    'Awkward', 'Bagpipes', 'Banjo', 'Bungler', 'Croquet', 'Crypt', 'Dwarves', 'Fervid', 'Fishhook', 'Fjord', 'Gazebo', 'Gypsy', 'Haiku', 'Haphazard', 'Hyphen',
+    'Ivory', 'Jazzy', 'Jiffy' , 'Jinx', 'Jukebox', 'Kayak', 'Kiosk', 'Klutz', 'Memento', 'Mystify', 'Numbskull', 'Ostracize', 'Oxygen', 'Pajama', 'Phlegm', 'Pixel',
+    'Polka', 'Quad', 'Quip', 'Rhythmic', 'Rogue', 'Sphinx', 'Squawk', 'Swivel', 'Toady', 'Twelfth', 'Unzip', 'Waxy', 'Wildebeest', 'Yacht', 'Zealous', 'Zigzag', 'Zippy', 'Zombie'
 ];
 
 //pick a random word from the array
-randomNumber = Math.floor(Math.random() * 10);
+randomNumber = Math.floor(Math.random() * listOfWords.length);
 secretWord = listOfWords[randomNumber];
 secretWord = secretWord.toUpperCase();
 console.log(secretWord);
@@ -47,6 +40,7 @@ $(document).on("keypress", function (event) {
     console.log(keypressed);
     
      if(alphabet.indexOf("_") === -1) {
+        //make a bad noise
         console.log("already pressed");
         return;
      }
