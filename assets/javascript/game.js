@@ -81,6 +81,7 @@ $("#div_alphabet").on("click", function (event) {
     var checkIfGuessed = secretWordDisplay.indexOf("_");
     if(checkIfGuessed < 0) {
         gameOver = true;
+        console.log("YOU WON...CONGRATULATIONS");
     }
 
     //Update the remaining attempts var
@@ -91,7 +92,7 @@ $("#div_alphabet").on("click", function (event) {
         console.log(`Attempts: ${attemptsLeft}`);
         if (attemptsLeft == 0) {
             gameOver = true;
-            console.log("GAMEOVER");
+            console.log("YOU LOST...GAMEOVER");
         }
     }
 });
