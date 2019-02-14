@@ -100,6 +100,7 @@ function game(letterThatWasClicked) {
     var checkIfGuessed = secretWordDisplay.indexOf("_");
     if(checkIfGuessed < 0) {
         gameOver = true;
+        $("#h1_the_secret_word").addClass("winner");
         console.log("YOU WON...CONGRATULATIONS");
     }
 
@@ -111,6 +112,8 @@ function game(letterThatWasClicked) {
         console.log(`Attempts: ${attemptsLeft}`);
         if (attemptsLeft == 0) {
             gameOver = true;
+            $("#h1_the_secret_word").text(secretWord);
+            $("#h1_the_secret_word").addClass("loser");
             console.log("YOU LOST...GAMEOVER");
         }
     }
