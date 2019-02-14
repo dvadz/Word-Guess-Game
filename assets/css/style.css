@@ -21,6 +21,7 @@
 
 .letters:hover {
     color: crimson;
+    cursor: pointer;
 }
 
 .disappear {
