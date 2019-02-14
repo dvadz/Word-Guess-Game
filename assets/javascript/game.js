@@ -44,8 +44,9 @@ $(document).on("keypress", function (event) {
     var keypressed = String.fromCharCode(event.which);
     keypressed = keypressed.toUpperCase();    
     console.log(keypressed);
-    
-     if(alphabet.indexOf("_") === -1) {
+
+    //check is the letter has been pressed before
+    if(alphabet.indexOf(keypressed) === -1) {
         //make a bad noise
         console.log("already pressed");
         return;
