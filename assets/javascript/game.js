@@ -40,13 +40,15 @@ $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 
 // KEYPRESS LISTENER
 $(document).on("keypress", function (event) {
+
+    //Find out the letter that was pressed
     var keypressed = String.fromCharCode(event.which);
     keypressed = keypressed.toUpperCase();    
     console.log(keypressed);
 });
 
 
-//LISTEN FOR CLICKS IN THE DIV THAT SHOWS THE ALPHABET
+//LISTEN FOR CLICKS
 $("#div_alphabet").on("click", function (event) {
 
     //Check if gameOver
@@ -59,18 +61,27 @@ $("#div_alphabet").on("click", function (event) {
         return;
     }
 
-    //hide the letter that was clicked from the screen
-    $("#" + event.target.id).addClass("disappear");
-
     //get the identity of the letter that was clicked
-    //remove that letter from the alphabet array
     var letterThatWasClicked = event.target.innerText;
+
+    game(letterThatWasClicked);
+   
+});
+
+
+function game(letterThatWasClicked) {
+
+    //hide the letter that was clicked from the screen
+    // $("#" + event.target.id).addClass("disappear");
+    $("#letter" + letterThatWasClicked).addClass("disappear");
+    console.log(event.target.id);
+
+    //remove that letter from the alphabet array
     for (var i = 0; i < alphabet.length; i++) {
         if (alphabet[i] === letterThatWasClicked) {
             alphabet.splice(i, 1);
         }
     }
-
 
     //Check if there is any match
     var isMatched = false;
@@ -100,5 +111,4 @@ $("#div_alphabet").on("click", function (event) {
             console.log("YOU LOST...GAMEOVER");
         }
     }
-});
-
+}
