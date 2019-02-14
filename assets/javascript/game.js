@@ -77,6 +77,12 @@ $("#div_alphabet").on("click", function (event) {
     }
     $("#h1_the_secret_word").text(secretWordDisplay.join(""));
 
+    //Check if the word has been guessed
+    var checkIfGuessed = secretWordDisplay.indexOf("_");
+    if(checkIfGuessed < 0) {
+        gameOver = true;
+    }
+
     //Update the remaining attempts var
     if (isMatched) {
         //make a sound
