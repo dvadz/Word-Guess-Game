@@ -108,6 +108,7 @@ function game(letterThatWasClicked) {
     if (isMatched) {
         //make a sound
     } else {
+        $("#attempts" + attemptsLeft).addClass("invisible");
         attemptsLeft--;
         console.log(`Attempts: ${attemptsLeft}`);
         if (attemptsLeft == 0) {
