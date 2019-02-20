@@ -20,51 +20,45 @@
         <div class="jumbotron text-center">
             <h1 class="font-barcodes display-4">Word Guess Game</h1>
         </div>
-        <div class="row justify-content-center">
-           <div id="attempts1" class="rounded px-3 py-1 mx-3 bg-danger"></div>
-           <div id="attempts2" class="rounded px-3 py-1 mx-3 bg-danger"></div>
-           <div id="attempts3" class="rounded px-3 py-1 mx-3 bg-danger"></div>
-           <div id="attempts4" class="rounded px-3 py-1 mx-3 bg-warning"></div>
-           <div id="attempts5" class="rounded px-3 py-1 mx-3 bg-warning"></div>
-           <div id="attempts6" class="rounded px-3 py-1 mx-3 bg-warning"></div>
-           <div id="attempts7" class="rounded px-3 py-1 mx-3 bg-warning"></div>
-           <div id="attempts8" class="rounded px-3 py-1 mx-3 bg-success"></div>
-           <div id="attempts9" class="rounded px-3 py-1 mx-3 bg-success"></div>
-           <div id="attempts10" class="rounded px-3 py-1 mx-3 bg-success"></div>          
+        <div class="row justify-content-around" >
+            <h5>WINS <span id="wins"></span></h2>  
+            <h5>GUESSES <span id="guesses"></span></h2> 
+            <h5>LOSSES <span id="losses"></span></h2>
         </div>
-        <div id="div_secret_word" class="row mt-5 justify-content-center">
-            <h1 id="h1_the_secret_word" class="display-1 "></h1>
+        <div id="div-word-board" class="row mt-5 justify-content-center">
+            <h1 id="h1-word-board" class="display-3 "></h1>
         </div>
 
-        <div id="div_alphabet" class="row display-4 justify-content-center">
-            <span class="letters" id="letterA">A</span>
-            <span class="letters" id="letterB">B</span>
-            <span class="letters" id="letterC">C</span>
-            <span class="letters" id="letterD">D</span>
-            <span class="letters" id="letterE">E</span>
-            <span class="letters" id="letterF">F</span>
-            <span class="letters" id="letterG">G</span>
-            <span class="letters" id="letterH">H</span>
-            <span class="letters" id="letterI">I</span>
-            <span class="letters" id="letterJ">J</span>
-            <span class="letters" id="letterK">K</span>
-            <span class="letters" id="letterL">L</span>
-            <span class="letters" id="letterM">M</span>
-            <span class="letters" id="letterN">N</span>
-            <span class="letters" id="letterO">O</span>
-            <span class="letters" id="letterP">P</span>
-            <span class="letters" id="letterQ">Q</span>
-            <span class="letters" id="letterR">R</span>
-            <span class="letters" id="letterS">S</span>
-            <span class="letters" id="letterT">T</span>
-            <span class="letters" id="letterU">U</span>
-            <span class="letters" id="letterV">V</span>
-            <span class="letters" id="letterW">W</span>
-            <span class="letters" id="letterX">X</span>
-            <span class="letters" id="letterY">Y</span>
-            <span class="letters" id="letterZ">Z</span>
+        <div id="div_alphabet" class="row justify-content-center">
+            <h3 id="h1-start" class="">Press Any Key to Start</h3>
+            <span class="letters letterA" letter-name="A">A</span>
+            <span class="letters letterB" letter-name="B">B</span>
+            <span class="letters letterC" letter-name="C">C</span>
+            <span class="letters letterD" letter-name="D">D</span>
+            <span class="letters letterE" letter-name="E">E</span>
+            <span class="letters letterF" letter-name="F">F</span>
+            <span class="letters letterG" letter-name="G">G</span>
+            <span class="letters letterH" letter-name="H">H</span>
+            <span class="letters letterI" letter-name="I">I</span>
+            <span class="letters letterJ" letter-name="J">J</span>
+            <span class="letters letterK" letter-name="K">K</span>
+            <span class="letters letterL" letter-name="L">L</span>
+            <span class="letters letterM" letter-name="M">M</span>
+            <span class="letters letterN" letter-name="N">N</span>
+            <span class="letters letterO" letter-name="O">O</span>
+            <span class="letters letterP" letter-name="P">P</span>
+            <span class="letters letterQ" letter-name="Q">Q</span>
+            <span class="letters letterR" letter-name="R">R</span>
+            <span class="letters letterS" letter-name="S">S</span>
+            <span class="letters letterT" letter-name="T">T</span>
+            <span class="letters letterU" letter-name="U">U</span>
+            <span class="letters letterV" letter-name="V">V</span>
+            <span class="letters letterW" letter-name="W">W</span>
+            <span class="letters letterX" letter-name="X">X</span>
+            <span class="letters letterY" letter-name="Y">Y</span>
+            <span class="letters letterZ" letter-name="Z">Z</span>
         </div>
-        
+        <span class="div_guesses"></span>
     </div>
 </body>
 

@@ -2,21 +2,35 @@
     font-family: 'Libre Barcode 39 Text', cursive;
 }
 
+.container {
+    max-width: 720px;;
+}
 .jumbotron {
     background-color: #5A1807;
     color: white;
 }
 
-#h1_the_secret_word {
+#h1-word-board {
     letter-spacing: 30px;    
 }
 
 .letters {
-    width: 55px;
-    height: 69px;
-    margin: 15px;
+    width: 30px;
+    height: 40px;
+    margin: 12px;
+    font-size: 2rem;
     text-align: center;
     color: #5A1807;
+}
+
+
+.picked_letters {
+    width: 30px;
+    height: 40px;
+    margin: 12px;
+    font-size: 2rem;
+    text-align: center;
+    color: gray;
 }
 
 .letters:hover {
