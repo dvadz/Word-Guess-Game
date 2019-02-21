@@ -32,21 +32,20 @@
     text-align: center;
     color: gray;
 }
-
 .letters:hover {
     color: crimson;
     font-size: 4rem;
     cursor: pointer;
 }
-
+#h1-start:hover {
+    cursor: pointer;
+}
 .disappear {
     display: none;
 }
-
 .winner {
     color: green;
 }
-
 .loser {
     color: red;
 }

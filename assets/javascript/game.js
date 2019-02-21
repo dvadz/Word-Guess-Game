@@ -13,13 +13,13 @@ var guessGame = {
         'Ivory', 'Jazzy', 'Jiffy' , 'Jinx', 'Jukebox', 'Kayak', 'Kiosk', 'Klutz', 'Memento', 'Mystify', 'Numbskull', 'Ostracize', 'Oxygen', 'Pajama', 'Phlegm', 'Pixel',
         'Polka', 'Quad', 'Quip', 'Rhythmic', 'Rogue', 'Sphinx', 'Squawk', 'Swivel', 'Toady', 'Twelfth', 'Unzip', 'Waxy', 'Wildebeest', 'Yacht', 'Zealous', 'Zigzag', 'Zippy', 'Zombie'
     ]
-    ,setupTheWordBoard : function () {
+    ,setupTheWordBoard : function() {
         this.status.WordBoard = [];
         for (var i = 0; i < this.status.secretWord.length; i++) {
             this.status.WordBoard.push("_");
         }
     }
-    ,updateTheWordBoard : function (letter) {
+    ,updateTheWordBoard : function(letter) {
         var isMatched = false;
         console.log("update: ", typeof letter, letter);
         for (var i = 0; i < this.status.secretWord.length; i++) {
@@ -35,24 +35,24 @@ var guessGame = {
         var checkHasAMatch = this.status.secretWord.indexOf(letter);
         this.status.isCorrect = (checkHasAMatch>-1) ? true : false;
     }
-    ,checkIfWordIsComplete : function () {
+    ,checkIfWordIsComplete : function() {
         var checkIfGuessed = this.status.WordBoard.indexOf("_");
         this.status.isComplete = (checkIfGuessed < 0) ? true : false;
     }
     //picks a random word from the 'listOfWords' then assigns it to the 'secretWord'
-    ,selectAWordFromTheList : function () {
+    ,selectAWordFromTheList : function() {
         var randomNumber = Math.floor(Math.random() * this.listOfWords.length);
         var randomlySelectedWord = this.listOfWords[randomNumber];
         randomlySelectedWord = randomlySelectedWord.toUpperCase();
         this.status.secretWord = randomlySelectedWord;
     }
-    ,pickANewWord : function () {
+    ,pickANewWord : function() {
         //get a new word and prepare the WordBoard
         this.selectAWordFromTheList();
         this.setupTheWordBoard();
         return this.status;
     }
-    ,makeAGuess : function (letter) {
+    ,makeAGuess : function(letter) {
         this.checkIfTheLetterHasAMatch(letter);
         if(this.status.isCorrect) {    //the letter has a match
             this.updateTheWordBoard(letter);
@@ -104,7 +104,7 @@ var gameConsole = {
         error: new Audio('../assets/sounds/07055186.wav'),
         wrong: new Audio('../assets/sounds/glass_breaking_2.wav')
     }
-    ,playSound : function (soundToBePlayed) {
+    ,playSound : function(soundToBePlayed) {
         //stop the current audio if it is still playing
         if(!this.sounds[soundToBePlayed].paused) {
             this.sounds[soundToBePlayed].pause();
@@ -113,7 +113,7 @@ var gameConsole = {
         //now play the sound
         this.sounds[soundToBePlayed].play();
     }
-    ,areWeStillPlaying : function () {
+    ,areWeStillPlaying : function() {
         return this.score.isPlayingAGame;
     }
     ,checkIsItALetter : function(letter) {
@@ -125,7 +125,7 @@ var gameConsole = {
             return false;
         }
     }
-    ,checkIsItANEWLetter : function (letter) {
+    ,checkIsItANEWLetter : function(letter) {
         if(this.previousLetterGuesses.indexOf(letter) === -1) {   //not found in the list, so it is new
             this.previousLetterGuesses.push(letter);
             var pickedletter = $("<span>").text(letter).addClass("picked_letters").text(letter);
@@ -158,10 +158,10 @@ var gameConsole = {
         this.score.losses++;
         this.refreshScoreBoard();
     }
-    ,hideLetterBoard : function () {
+    ,hideLetterBoard : function() {
         $(".letters").addClass("d-none");
     }
-    ,showLetterBoard : function () {
+    ,showLetterBoard : function() {
         $(".letters").removeClass("d-none");
     }
     ,refreshScoreBoard : function() {
@@ -184,7 +184,7 @@ var gameConsole = {
         this.promptPressAnykeyToStart();
         console.log("ready to start a game");
     }
-    ,startAGame : function (status) {
+    ,startAGame : function(status) {
         this.score.isPlayingAGame = true;
         this.hidePressAnykeyToStart();
         this.resetGuessCounter();
@@ -230,15 +230,19 @@ $("document").ready( function() {
     //     keyclick.play();
     //   });
     // KEYPRESS LISTENER
-    $(document).on("keypress", function (event) {     
+    $(document).on("keypress", function(event) {     
         //Find out which letter was pressed
         var keypressed = String.fromCharCode(event.which);
         keypressed = keypressed.toUpperCase();    
         console.log("keypress: ", keypressed);
         main(keypressed);
     });
+    //WAIT FOR CLICK ON THE 'PRESS ANY KEY TO START'
+    $("#h1-start").on("click", function(){
+        main("S");
+    });
     //LISTEN FOR CLICKS
-    $(".letters").on("click", function (event) {
+    $(".letters").on("click", function() {
         //Find out which letter was clicked
         var letterThatWasClicked = $(this).attr("letter-name");
         console.log("clicked: " + letterThatWasClicked); 
