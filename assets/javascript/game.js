@@ -75,32 +75,7 @@ var gameConsole = {
     }
     ,previousLetterGuesses : []
     ,sounds : {
-        A: new Audio('../assets/sounds/bubbles.mp3'),
-        B: new Audio('../assets/sounds/clay.mp3'),    
-        C: new Audio('../assets/sounds/confetti.mp3'),
-        D: new Audio('../assets/sounds/corona.mp3'),
-        E: new Audio('../assets/sounds/dotted-spiral.mp3'),
-        F: new Audio('../assets/sounds/flash-1.mp3'),
-        G: new Audio('../assets/sounds/flash-2.mp3'),
-        H: new Audio('../assets/sounds/flash-3.mp3'),
-        I :new Audio('../assets/sounds/glimmer.mp3'),
-        J: new Audio('../assets/sounds/moon.mp3'),
-        K: new Audio('../assets/sounds/pinwheel.mp3'),
-        L: new Audio('../assets/sounds/piston-1.mp3'),
-        M: new Audio('../assets/sounds/piston-2.mp3'),
-        N: new Audio('../assets/sounds/prism-1.mp3'),
-        O: new Audio('../assets/sounds/prism-2.mp3'),
-        P: new Audio('../assets/sounds/prism-3.mp3'),
-        Q: new Audio('../assets/sounds/splits.mp3'),
-        R: new Audio('../assets/sounds/squiggle.mp3'),
-        S: new Audio('../assets/sounds/strike.mp3'),
-        T: new Audio('../assets/sounds/suspension.mp3'),
-        U: new Audio('../assets/sounds/timer.mp3'),
-        V: new Audio('../assets/sounds/ufo.mp3'),
-        W: new Audio('../assets/sounds/veil.mp3'),
-        X: new Audio('../assets/sounds/wipe.mp3'),
-        Y: new Audio('../assets/sounds/zig-zag.mp3'),
-        Z: new Audio('../assets/sounds/moon.mp3'),
+        correct: new Audio('../assets/sounds/prism-2.mp3'),
         error: new Audio('../assets/sounds/07055186.wav'),
         wrong: new Audio('../assets/sounds/glass_breaking_2.wav')
     }
@@ -294,7 +269,7 @@ function main(letterThatWasClicked) {
         }
         //refresh the WordBoard
         gameConsole.refreshWordBoard(status);
-        gameConsole.playSound(letterThatWasClicked); 
+        gameConsole.playSound("correct"); 
     } else {
         gameConsole.decrementGuessCounter();
         if(!gameConsole.areWeStillPlaying()) {
