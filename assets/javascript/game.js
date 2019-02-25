@@ -75,9 +75,9 @@ var gameConsole = {
     }
     ,previousLetterGuesses : []
     ,sounds : {
-        correct: new Audio('../assets/sounds/prism-2.mp3'),
-        error: new Audio('../assets/sounds/07055186.wav'),
-        wrong: new Audio('../assets/sounds/glass_breaking_2.wav')
+        correct: new Audio('./assets/sounds/prism-2.mp3'),
+        error: new Audio('./assets/sounds/07055186.wav'),
+        wrong: new Audio('./assets/sounds/glass_breaking_2.wav')
     }
     ,playSound : function(soundToBePlayed) {
         //stop the current audio if it is still playing
