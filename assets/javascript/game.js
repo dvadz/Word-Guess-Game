@@ -75,9 +75,12 @@ var gameConsole = {
     }
     ,previousLetterGuesses : []
     ,sounds : {
-        correct: new Audio('./assets/sounds/prism-2.mp3'),
-        error: new Audio('./assets/sounds/07055186.wav'),
-        wrong: new Audio('./assets/sounds/glass_breaking_2.wav')
+        correct: new Audio('./assets/sounds/prism-2.mp3')
+        ,error: new Audio('./assets/sounds/07055186.wav')
+        ,wrong: new Audio('./assets/sounds/glass_breaking_2.wav')
+        ,winner: new Audio('./assets/sounds/crowdapplause.mp3')
+        ,loser: new Audio('./assets/sounds/losing-horn.mp3')
+    
     }
     ,playSound : function(soundToBePlayed) {
         //stop the current audio if it is still playing
@@ -184,6 +187,7 @@ var gameConsole = {
         this.clearLetterGuesses();
         this.promptPressAnykeyToStart();
         console.log("YOU WON...CONGRATULATIONS");
+        this.playSound("winner");
     }
     ,youLOST : function(status) {
         this.incrementLOSSES();
@@ -193,17 +197,13 @@ var gameConsole = {
         this.clearLetterGuesses();
         this.promptPressAnykeyToStart();
         console.log("SORRY...YOU LOST");
+        this.playSound("loser");
     }
 };
 
 
 $("document").ready( function() {
     'use strict'
-    //setup button sound when hovering over screen letters
-    // var keyclick = new Audio("../assets/sounds/button1.wav");
-    // $(".letters").mouseenter(function() {
-    //     keyclick.play();
-    //   });
     // KEYPRESS LISTENER
     $(document).on("keypress", function(event) {     
         //Find out which letter was pressed
