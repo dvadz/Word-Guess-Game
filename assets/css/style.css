@@ -1,51 +1,51 @@
-.font-barcodes{
-    font-family: 'Libre Barcode 39 Text', cursive;
+.font-barcodes {
+  font-family: "Libre Barcode 39 Text", cursive;
 }
 
 .container {
-    max-width: 720px;;
+  max-width: 720px;
 }
 .jumbotron {
-    background-color: #5A1807;
-    color: white;
+  background-color: #5a1807;
+  color: white;
 }
 
 #h1-word-board {
-    letter-spacing: 30px;    
+  letter-spacing: 30px;
 }
 
 .letters {
-    width: 30px;
-    height: 40px;
-    margin: 12px;
-    font-size: 2rem;
-    text-align: center;
-    color: #5A1807;
+  width: 30px;
+  height: 40px;
+  margin: 12px;
+  font-size: 2rem;
+  text-align: center;
+  color: #5a1807;
+  transition: all 0.1s;
 }
-
 
 .picked_letters {
-    width: 30px;
-    height: 40px;
-    margin: 12px;
-    font-size: 2rem;
-    text-align: center;
-    color: gray;
+  width: 30px;
+  height: 40px;
+  margin: 12px;
+  font-size: 2rem;
+  text-align: center;
+  color: gray;
 }
 .letters:hover {
-    color: crimson;
-    font-size: 4rem;
-    cursor: pointer;
+  color: crimson;
+  transform: scale(1.6) translateY(-10px);
+  cursor: pointer;
 }
 #h1-start:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .disappear {
-    display: none;
+  display: none;
 }
 .winner {
-    color: green;
+  color: green;
 }
 .loser {
-    color: red;
+  color: red;
 }
